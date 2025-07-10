@@ -1,6 +1,6 @@
 <!DOCTYPE html>
- <html lang="pt-br">
- <head>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revista Aura - O seu Jornal Escolar</title>
@@ -9,14 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- </head>
- <body>
+</head>
+<body>
     <div class="initial-screen">
         <header>
+            <button class="hamburger-menu" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <img src="assets/imagem/logo.png" alt="Logo Revista Aura">
+            <div class="header-buttons-mobile">
+                <a href="noticias.html" class="botao-principal-header">Notícias</a>
+                <a href="#" class="botao-principal-header">Revista</a>
+            </div>
             <nav class="header-nav">
+                <a href="index.html" class="header-link">Home</a>
                 <a href="#" class="header-link">Envie uma pauta</a>
-                <a href="#" class="header-link">Notícias</a>
+                <a href="noticias.html" class="header-link">Notícias</a>
                 <a href="#" class="header-link">Nossa revista</a>
             </nav>
         </header>
@@ -25,16 +33,29 @@
             <h1>A revista mais <span id="span-au">AU</span><span id="span-to">TO</span><span id="span-ra">RA</span><span id="span-l">L</span> <br> da Etec</h1>
             <p>Seja bem-vindo! Esta é a nossa revista escolar, um espaço dedicado a compartilhar as histórias, os talentos e os desafios que moldam o nosso dia a dia. Explore nossas matérias e descubra o que está acontecendo na nossa comunidade.</p>
             <div class="botoes-titulo">
-                <a href="#" class="botao-principal">Veja as Notícias</a>
+                <a href="noticias.html" class="botao-principal">Veja as Notícias</a>
                 <a href="#" class="botao-principal">Revista</a>
             </div>
         </section>
     </div>
 
+    <div class="sidebar-menu">
+        <button class="close-menu" aria-label="Fechar Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-link">Home</a>
+            <a href="#" class="sidebar-link">Envie uma pauta</a>
+            <a href="noticias.html" class="sidebar-link">Notícias</a>
+            <a href="#" class="sidebar-link">Nossa revista</a>
+        </nav>
+    </div>
+
     <section class="noticias">
-        <div class="noticias-linha"> <h2>Dessa Semana</h2>
+        <div class="noticias-linha animate-on-scroll">
+            <h2>Dessa Semana</h2>
             <div class="carousel-container">
-                <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-button prev" aria-label="Voltar Notícia"><i class="fas fa-chevron-left"></i></button>
                 <div class="noticias-linha-caixas carousel-track">
                     <div class="caixa-noticia clone">
                         <img src="assets/imagem/image.png" alt="Imagem da Notícia 4">
@@ -79,11 +100,19 @@
                         <p>Notícia Recente 3</p>
                     </div>
                 </div>
-                <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+                <button class="carousel-button next" aria-label="Avançar Notícia"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
             </div>
         </div>
 
-        <div class="noticias-linha outras-noticias"> <h2>Outras Notícias</h2>
+        <div class="noticias-linha outras-noticias animate-on-scroll">
+            <h2>Outras Notícias</h2>
             <div class="outras-noticias-grid">
                 <div class="caixa-noticia">
                     <img src="assets/imagem/image.png" alt="Imagem da Notícia">
@@ -98,12 +127,11 @@
                     <p>Destaque Exclusivo 3</p>
                 </div>
             </div>
-            <a href="#" class="botao-descobrir-mais">Descubra Mais!</a>
-        </div >
+            <a href="noticias.html" class="botao-descobrir-mais">Descubra Mais!</a>
+        </div>
     </section>
 
-    <footer>
-        <img src="assets/imagem/logo.png" alt="Logo Revista Aura" class="footer-logo">
+    <footer> <img src="assets/imagem/logo.png" alt="Logo Revista Aura" class="footer-logo">
         <p class="footer-copyright">&copy; 2025 AURA. Inovação e Alma em Cada Matéria.</p>
         <div class="footer-social">
             <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub da Revista Aura" class="social-button">
@@ -116,5 +144,5 @@
     </footer>
 
     <script src="script.js"></script>
- </body>
- </html>
+</body>
+</html>

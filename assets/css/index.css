@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Novo contêiner para a tela inicial (header + título) */
+/* Novo estilo para a tela inicial - Animação de carregamento */
 .initial-screen {
     display: flex;
     flex-direction: column; /* Organiza header e título em coluna */
@@ -23,7 +23,21 @@ body {
     box-sizing: border-box;
     justify-content: center; /* Centraliza o conteúdo principal (header e titulo-animado) */
     align-items: flex-start; /* Alinha o conteúdo à esquerda dentro da tela inicial */
+
+    /* Animação de entrada da página */
+    opacity: 0; /* Começa invisível */
+    animation: fadeInPage 1.5s ease-out forwards; /* Nome da animação, duração, timing-function, preenchimento */
 }
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 
 header {
     background-color: transparent; /* Fundo do cabeçalho removido */
@@ -42,7 +56,7 @@ header {
 }
 
 header img {
-    display: none; /* Logo removida */
+    display: none; /* Logo removida - mantida em display:none para a versão mobile */
     height: 60px; /* Ajuste a altura da logo conforme necessário */
 }
 
@@ -169,7 +183,7 @@ header img {
     transition: opacity 1s ease-in-out 0.2s,
                 max-width 1s ease-in-out,
                 padding 1s ease-in-out,
-                margin 1s ease-in-out;
+                1s ease-in-out;
 }
 
 .titulo-animado.animar-aura #span-l {
@@ -201,7 +215,7 @@ header img {
     transform: translateY(-2px); /* Efeito de leve levantamento */
 }
 
-/* --- SEÇÃO DE NOTÍCIAS --- */
+/* --- SEÇÃO DE NOTÍCIAS (index.html) --- */
 .noticias {
     display: flex;
     flex-direction: column; /* Empilha as linhas de notícias verticalmente */
@@ -228,7 +242,7 @@ header img {
 }
 
 
-/* Estilos ESPECÍFICOS para a segunda linha (Outras Notícias) */
+/* Estilos ESPECÍFICOS para a segunda linha (Outras Notícias) no index.html */
 .noticias-linha.outras-noticias {
     margin-top: 60px; /* Distância da div de cima */
     margin-bottom: 0; /* Encosta no rodapé */
@@ -271,26 +285,27 @@ header img {
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out; /* Suaviza a transição do carrossel */
-    width: 100%; /* Ocupa a largura total disponível dentro do container */
-    overflow: visible; /* Mudei para visible para debug, se ainda não funcionar, pode ser hidden novamente */
-    justify-content: flex-start; /* Alinha os itens no início, já que vamos rolar */
+    width: 100%;
+    overflow: visible;
+    justify-content: flex-start;
     gap: 25px; /* Espaço entre as caixinhas */
     flex-wrap: nowrap; /* Impede quebra de linha dos itens do carrossel */
 }
 
+/* Botões de navegação do carrossel */
 .carousel-button {
     background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para os botões */
     color: white;
     border: none;
-    padding: 10px; /* Reduzindo um pouco o padding vertical */
+    padding: 10px;
     cursor: pointer;
     font-size: 1.5em;
     border-radius: 50%; /* Botões redondos */
-    width: 40px; /* Ajustando o tamanho para caber melhor */
-    height: 40px; /* Ajustando o tamanho para caber melhor */
-    display: flex; /* Para centralizar o ícone */
-    justify-content: center; /* Centraliza o ícone */
-    align-items: center; /* Centraliza o ícone */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -362,8 +377,6 @@ header img {
     gap: 25px; /* Espaço entre as caixinhas */
     width: 100%; /* Ocupa a largura total da linha */
     margin-bottom: 40px; /* Espaço entre as caixinhas e o novo botão */
-    /* Adicionado para debug: */
-    /* border: 2px dashed blue; */
 }
 
 /* Estilo para as caixinhas dentro de "Outras Notícias" */
@@ -374,8 +387,6 @@ header img {
     min-width: 300px; /* Aumenta o min-width para evitar que fiquem muito pequenas e quebrem */
     height: auto; /* Mantendo altura automática */
     box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura */
-    /* Adicionado para debug: */
-    /* border: 1px solid red; */
 }
 
 
@@ -455,8 +466,346 @@ footer {
     transform: translateY(-2px); /* Efeito de leve levantamento */
 }
 
+/* --- Regras para Animações de Rolagem (Fade-in Slide-up) --- */
+.animate-on-scroll {
+    opacity: 0; /* Começa invisível */
+    transform: translateY(50px); /* Começa 50px abaixo da posição final */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transição suave para opacidade e posição */
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1; /* Torna-se visível */
+    transform: translateY(0); /* Sobe para a posição final */
+}
+
+
+/* --- Estilos do Menu Hamburguer e Sidebar (Off-Canvas) --- */
+.hamburger-menu {
+    display: none; /* Escondido por padrão, só aparece em mobile */
+    background: none;
+    border: none;
+    color: black; /* Cor do ícone */
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px; /* Espaço entre o ícone e a logo/outros itens do header */
+    z-index: 11; /* Acima do cabeçalho */
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Começa fora da tela */
+    width: 250px; /* Largura do menu lateral */
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    z-index: 100; /* Garante que fique acima de tudo */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-menu.active {
+    left: 0; /* Entra na tela */
+}
+
+.sidebar-menu .close-menu {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font-size: 1.8em;
+    cursor: pointer;
+    align-self: flex-end; /* Alinha o botão de fechar à direita */
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
+}
+
+.sidebar-link:hover {
+    color: #FF0088;
+}
+
+/* Estilos para os botões no cabeçalho mobile */
+.header-buttons-mobile {
+    display: none; /* Escondido por padrão, só aparece em mobile */
+    gap: 10px;
+    align-items: center;
+    margin-left: auto; /* Empurra para a direita */
+}
+
+.botao-principal-header {
+    background-color: #FF0088;
+    color: white;
+    padding: 5px 10px; /* Diminuído para ser proporcional */
+    border: none;
+    border-radius: 3px; /* Bordas um pouco menos arredondadas */
+    text-decoration: none;
+    font-size: 0.8em; /* Fonte menor */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita quebra de linha do texto do botão */
+}
+
+.botao-principal-header:hover {
+    background-color: #cc0066;
+}
+
+/* Estilos para as bolinhas do carrossel */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espaço acima das bolinhas */
+    gap: 10px; /* Espaço entre as bolinhas */
+    width: 100%; /* Ocupa a largura total para centralizar */
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Bolinha branca semi-transparente */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+    background-color: white; /* Bolinha ativa branca sólida */
+    transform: scale(1.2); /* Um pouco maior quando ativa */
+}
+
+/* --- NOVOS ESTILOS PARA NOTICIAS.HTML --- */
+
+/* Altera o background da área principal da página de notícias para branco */
+.all-news-page {
+    background-color: #ffffff; /* Fundo branco para toda a área de conteúdo */
+    padding-top: 80px; /* Espaço para o cabeçalho fixo */
+    min-height: calc(100vh - 120px); /* Garante que o conteúdo ocupe a altura da tela menos footer e header */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.noticias-page-container {
+    background-color: transparent; /* Remove o fundo rosa que estava aqui */
+    padding: 40px 5vw; /* Padding para as margens laterais */
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o grid de notícias */
+}
+
+.noticias-page-container .noticias-linha.outras-noticias {
+    background-color: transparent; /* Garante que o fundo seja branco, não rosa */
+    box-shadow: none; /* Remove a sombra que vinha da classe */
+    width: 100%; /* Garante que ocupe a largura do container pai */
+    max-width: none; /* Permite expansão total */
+    margin-left: 0; /* Remove o truque de centralização de 100vw */
+    margin-right: 0; /* Remove o truque de centralização de 100vw */
+    padding: 0; /* Remove padding específico que vinha de .noticias-linha.outras-noticias */
+}
+
+.noticias-page-container h2 {
+    color: #1a1a1a; /* Título preto na página de notícias */
+    margin-bottom: 30px;
+    width: 100%; /* Ocupa a largura total para alinhar o botão */
+    text-align: left; /* Alinha o título à esquerda */
+    padding-left: 20px; /* Padding para alinhar com o conteúdo */
+}
+
+/* Nova estrutura para o header da página de notícias, incluindo o botão */
+.noticias-header-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative; /* Para posicionar o calendário */
+}
+
+/* Borda rosa nas caixinhas de notícia */
+.all-news-page .caixa-noticia {
+    border: 2px solid #FF0088; /* Borda rosa */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+}
+
+/* Botão "Procurar por data" */
+.search-by-date-button {
+    background-color: #FF0088;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap; /* Evita quebra de linha */
+    z-index: 1; /* Garante que esteja acima do conteúdo principal */
+}
+
+.search-by-date-button:hover {
+    background-color: #cc0066;
+    transform: translateY(-2px);
+}
+
+/* Estilos para o Calendário */
+.calendar-popup {
+    position: absolute;
+    top: 100%; /* Abaixo do botão */
+    right: 0; /* Alinhado à direita */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 20; /* Acima de outros elementos */
+    display: none; /* Começa oculto */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.calendar-popup.active {
+    display: block; /* Torna visível */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #FF0088;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.calendar-header button:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+    font-size: 0.85em;
+    color: #555;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-day, .empty-day {
+    padding: 8px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.calendar-day {
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+}
+
+.calendar-day:hover {
+    background-color: #FF0088;
+    color: white;
+}
+
+.calendar-day.selected {
+    background-color: #FF0088;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.empty-day {
+    background-color: transparent;
+    cursor: default;
+}
+
+.calendar-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.calendar-footer select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    flex-grow: 1;
+}
+
+.calendar-footer button {
+    background-color: #FF0088;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-footer button:hover {
+    background-color: #cc0066;
+}
+
 /* --- MEDIA QUERIES (AJUSTADAS) --- */
 @media (max-width: 1024px) {
+    /* Esconde as setas em tablets */
+    .carousel-button {
+        display: none;
+    }
+
     .carousel-container {
         padding: 0 30px; /* Menos espaço para botões em telas menores */
     }
@@ -501,11 +850,42 @@ footer {
         margin-left: 0; /* Remove margem lateral */
         justify-content: center; /* Centraliza os botões sociais */
     }
+
+    /* Em tablets, as bolinhas não devem aparecer (se a view for 2 itens) */
+    .carousel-dots {
+        display: none;
+    }
+
+    /* Ajustes para o calendário em tablets */
+    .noticias-header-page {
+        flex-direction: column; /* Empilha título e botão */
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .noticias-header-page h2 {
+        text-align: center;
+        padding-left: 0; /* Remove padding extra */
+        width: 100%;
+    }
+
+    .search-by-date-button {
+        align-self: flex-end; /* Alinha o botão à direita na coluna */
+    }
+
+    .calendar-popup {
+        right: 0;
+        left: unset; /* Desfaz o left para fixar à direita */
+        width: 280px; /* Ajuste a largura para telas menores */
+    }
 }
 
 @media (max-width: 768px) {
     .initial-screen {
-        height: auto;
+        /* Removemos o height: auto; e deixamos min-height e max-height */
+        min-height: 75vh; /* Garante que tenha no mínimo 75% da altura da tela */
+        max-height: 75vh; /* Garante que não ultrapasse 75% da altura da tela */
+        height: 75vh; /* Define a altura para exatamente 75% para forçar */
         justify-content: center;
     }
 
@@ -513,21 +893,35 @@ footer {
         height: auto;
         padding: 15px 20px;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between; /* Alinha o hambúrguer à esquerda e os botões à direita */
     }
 
+    header .header-nav {
+        display: none; /* Esconde a navegação padrão em mobile */
+    }
+
+    header .hamburger-menu {
+        display: block; /* Mostra o ícone do hambúrguer */
+    }
+
+    /* Centraliza a logo no mobile, entre o hambúrguer e os botões */
     header img {
-        display: none;
+        display: block;
         height: 45px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0; /* Remove margens que podem interferir */
     }
 
-    .header-nav {
-        gap: 10px;
+    /* Mostra os botões do cabeçalho em mobile */
+    .header-buttons-mobile {
+        display: flex;
     }
 
-    .header-link {
-        padding: 8px 12px;
-        font-size: 0.9em;
+    /* Esconde os botões originais do titulo-animado em mobile */
+    .titulo-animado .botoes-titulo {
+        display: none;
     }
 
     .titulo-animado {
@@ -550,45 +944,40 @@ footer {
         margin-bottom: 20px;
     }
 
-    .botoes-titulo {
-        flex-direction: column;
-        gap: 10px;
+    /* Esconde as setas do carrossel em mobile */
+    .carousel-button {
+        display: none;
     }
 
-    .botao-principal {
-        width: 80%;
-        max-width: 250px;
-        margin: 0 auto;
+    /* Garante que o contêiner do carrossel não tenha padding lateral em mobile, pois não há setas */
+    .carousel-container {
+        padding: 0;
     }
 
     .noticias {
-        padding: 20px 5vw 0 5vw; /* ATENÇÃO AQUI: padding-bottom removido (0) */
+        padding: 20px 5vw 0 5vw;
         margin-top: 50px;
     }
 
     .noticias-linha {
-        padding: 30px; /* Volta para padding padrão */
-        border-radius: 0; /* Garante bordas retas em mobile também */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Garante a sombra em mobile também */
-        width: calc(100% - 40px); /* Ajuste da largura em mobile */
-        max-width: none; /* Remove max-width para telas menores */
+        padding: 30px;
+        border-radius: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        width: calc(100% - 40px);
+        max-width: none;
     }
 
     /* Ajustes específicos para "Outras Notícias" em 768px */
     .noticias-linha.outras-noticias {
-        margin-top: 30px; /* Ajuste da margem superior para mobile */
-        padding: 30px 20px; /* Ajusta padding para mobile */
-        width: 100vw; /* Garante 100vw */
-        margin-left: calc(-50vw + 50%); /* Centraliza e expande */
-        margin-right: calc(-50vw + 50%); /* Centraliza e expande */
+        margin-top: 30px;
+        padding: 30px 20px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
     }
 
     .noticias-linha h2 {
         font-size: 1.6em;
-    }
-
-    .carousel-container {
-        padding: 0 20px; /* Mais perto das bordas em mobile */
     }
 
     .carousel-track .caixa-noticia {
@@ -608,15 +997,37 @@ footer {
         padding: 12px 25px;
         font-size: 1em;
     }
+
+    /* Em mobile, as bolinhas devem aparecer (se a view for 1 item) */
+    .carousel-dots {
+        display: flex;
+    }
+
+    /* Ajustes para o botão de busca em mobile */
+    .search-by-date-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .calendar-popup {
+        width: 90%; /* Ocupa mais largura em mobile */
+        left: 50%;
+        transform: translateX(-50%);
+        right: unset; /* Desfaz o right */
+    }
+
+    .noticias-page-container h2 {
+        font-size: 1.8em; /* Ajusta o tamanho do título "Todas as Notícias" */
+    }
 }
 
 @media (max-width: 480px) {
     header img {
-        display: none;
+        display: block;
         height: 40px;
     }
 
-    .header-link {
+    .header-link { /* Este estilo não será visível em mobile por causa do display:none no .header-nav */
         font-size: 0.8em;
     }
 
@@ -626,5 +1037,10 @@ footer {
 
     .titulo-animado p {
         font-size: 0.9em;
+    }
+
+    .botao-principal { /* Este estilo não será visível em mobile */
+        width: 100%;
+        max-width: unset;
     }
 }
