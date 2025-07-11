@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Novo estilo para a tela inicial - Animação de carregamento */
+.initial-screen {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../imagem/fundo (2).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0;
+    animation: fadeInPage 1.5s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    background-color: transparent;
+    color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
+}
+
+header img {
+    display: none;
+    height: 60px;
+}
+
+/* Estilos para os novos links do cabeçalho */
+.header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header-link {
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-link:hover {
+    background-color: black;
+    color: white;
+}
+
+.titulo-animado {
+    text-align: left;
+    padding: 30px 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    margin: auto 0;
+}
+
+.titulo-animado h1 {
+    font-size: 2.8em;
+    color: #1a1a1a;
+    display: inline;
+    position: relative;
+    white-space: nowrap;
+    max-width: 90%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* NOVO ESTILO PARA O PARÁGRAFO */
+.titulo-animado p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.titulo-animado h1 span {
+    display: inline-block;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out, max-width 1s ease-in-out, padding 1s ease-in-out, margin 1s ease-in-out;
+    position: relative;
+    vertical-align: top;
+}
+
+#span-au, #span-ra {
+    color: #FF0088;
+    font-weight: bold;
+}
+
+#span-au {
+    transform: translateX(0px);
+    margin-left: 0;
+}
+
+#span-ra {
+    transform: translateX(0px);
+    margin-right: 0;
+}
+
+#span-to,
+#span-l {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    transition: opacity 1s ease-in-out,
+                max-width 0.8s ease-in-out 0.2s,
+                padding 0.8s ease-in-out 0.2s,
+                margin 0.8s ease-in-out 0.2s;
+}
+
+.titulo-animado.animar-aura #span-au {
+    transform: translateX(0);
+    margin-left: 0;
+}
+
+.titulo-animado.animar-aura #span-ra {
+    transform: translateX(0);
+    margin-right: 0;
+}
+
+.titulo-animado.animar-aura #span-to,
+.titulo-animado.animar-aura #span-l {
+    opacity: 1;
+    max-width: 100px;
+    padding-left: initial;
+    padding-right: initial;
+    margin-left: 0;
+    margin-right: 0;
+    transition: opacity 1s ease-in-out 0.2s,
+                max-width 1s ease-in-out,
+                padding 1s ease-in-out,
+                1s ease-in-out;
+}
+
+.titulo-animado.animar-aura #span-l {
+    margin-right: 0;
+}
+
+/* Estilos para os novos botões abaixo do título */
+.botoes-titulo {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.botao-principal {
+    background-color: #FF0088;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao-principal:hover {
+    background-color: #cc0066;
+    transform: translateY(-2px);
+}
+
+/* --- ESTILOS DO NOVO FOOTER --- */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 30px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.footer-copyright {
+    font-size: 0.9em;
+    text-align: center;
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.social-button {
+    background-color: #FF0088;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: #cc0066;
+    transform: translateY(-2px);
+}
+
+/* --- Regras para Animações de Rolagem (Fade-in Slide-up) --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Estilos do Menu Hamburguer e Sidebar (Off-Canvas) --- */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+    z-index: 11;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-menu.active {
+    left: 0;
+}
+
+.sidebar-menu .close-menu {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font-size: 1.8em;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
+}
+
+.sidebar-link:hover {
+    color: #FF0088;
+}
+
+/* Estilos para os botões no cabeçalho mobile */
+.header-buttons-mobile {
+    display: none;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.botao-principal-header {
+    background-color: #FF0088;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.botao-principal-header:hover {
+    background-color: #cc0066;
+}
+
+/* CORREÇÕES FINAIS E MAIS ESPECÍFICAS PARA A PÁGINA DE NOTÍCIAS */
+body.noticias-page header {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+body.noticias-page header img {
+    display: none;
+}
+
+body.noticias-page .header-nav {
+    margin-left: 0;
+}

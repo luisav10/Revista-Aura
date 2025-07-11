@@ -1,0 +1,180 @@
+/* --- ESTILOS PARA O POPUP DE ENVIO DE PAUTA --- */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+}
+
+.popup-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+    max-height: 80vh;
+    overflow-y: auto;
+    -ms-overflow-style: scroll;
+    scrollbar-width: thin;
+}
+
+/* Estilo para a cor da barra de rolagem (pode variar dependendo do navegador) */
+.popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+
+.popup-overlay.active .popup-content {
+    transform: translateY(0);
+}
+
+.popup-content h2 {
+    color: #FF0088;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.popup-content .close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.popup-content .close-popup:hover {
+    color: #FF0088;
+}
+
+.popup-content .form-group {
+    margin-bottom: 15px;
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.required-field {
+    color: red;
+    margin-left: 4px;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.popup-content input[type="text"]:focus,
+.popup-content input[type="email"]:focus {
+    border-color: #FF0088;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 136, 0.3);
+}
+
+.popup-content .optional-text {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.file-upload-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.popup-content .file-upload-label {
+    display: inline-block;
+    background-color: #FF0088;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.popup-content .file-upload-label:hover {
+    background-color: #cc0066;
+}
+
+.popup-content input[type="file"] {
+    display: none;
+}
+
+#file-name-display {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #777;
+    text-align: center;
+}
+
+.popup-content .submit-button {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-content .submit-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}

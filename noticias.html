@@ -1,280 +1,165 @@
 <!DOCTYPE html> 
- <html lang="pt-br"> 
- <head> 
-     <meta charset="UTF-8"> 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-     <title>Revista Aura - Todas as Notícias</title> 
-     <link rel="stylesheet" href="assets/css/index.css"> <link rel="preconnect" href="https://fonts.googleapis.com"> 
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
- </head> 
- <body> 
-     <header> 
-         <button class="hamburger-menu" aria-label="Abrir Menu"> 
-             <i class="fas fa-bars"></i> 
-         </button> 
-         <img src="assets/imagem/logo.png" alt="Logo Revista Aura"> 
-         <div class="header-buttons-mobile"> 
-             <a href="noticias.html" class="botao-principal-header">Notícias</a> 
-             <a href="#" class="botao-principal-header">Revista</a> 
-         </div> 
-         <nav class="header-nav"> 
-             <a href="index.html" class="header-link">Home</a> <a href="#" class="header-link">Envie uma pauta</a> 
-             <a href="noticias.html" class="header-link">Notícias</a> 
-             <a href="#" class="header-link">Nossa revista</a> 
-         </nav> 
-     </header> 
+<html lang="pt-br"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Revista Aura - Todas as Notícias</title> 
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/noticias.css"> 
+    <link rel="stylesheet" href="assets/css/popup.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+</head> 
+<body class="noticias-page"> 
 
-     <div class="sidebar-menu"> 
-         <button class="close-menu" aria-label="Fechar Menu"> 
-             <i class="fas fa-times"></i> 
-         </button> 
-         <nav class="sidebar-nav"> 
-             <a href="index.html" class="sidebar-link">Home</a> <a href="#" class="sidebar-link">Envie uma pauta</a> 
-             <a href="noticias.html" class="sidebar-link">Notícias</a> 
-             <a href="#" class="sidebar-link">Nossa revista</a> 
-         </nav> 
-     </div> 
+    <header class="noticias-page-header"> 
+        <button class="hamburger-menu" aria-label="Abrir Menu"> 
+            <i class="fas fa-bars"></i> 
+        </button> 
+        <nav class="header-nav"> 
+            <a href="index.html" class="header-link">Home</a> 
+            <a id="openPautaButton" href="#" class="header-link">Envie uma pauta</a> 
+            <a href="noticias.html" class="header-link">Notícias</a> 
+            <a href="#" class="header-link">Nossa revista</a> 
+        </nav> 
+    </header> 
 
-     <main class="all-news-page"> 
-         <section class="noticias-page-container animate-on-scroll"> 
-             <div class="noticias-header-page"> 
-                 <h2>Todas as Notícias</h2> 
-                 <button class="search-by-date-button" id="searchDateButton"> 
-                     Procurar por data <i class="fas fa-search"></i> 
-                 </button> 
-                 <div class="calendar-popup" id="calendarPopup"> 
-                     <div class="calendar-header"> 
-                         <button id="prevMonth">&lt;</button> 
-                         <span id="currentMonthYear"></span> 
-                         <button id="nextMonth">&gt;</button> 
-                     </div> 
-                     <div class="calendar-days-header"> 
-                         <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span> 
-                     </div> 
-                     <div class="calendar-grid" id="calendarGrid"> 
-                         </div> 
-                     <div class="calendar-footer"> 
-                         <select id="yearSelect"></select> 
-                         <select id="monthSelect"> 
-                             <option value="0">Janeiro</option> 
-                             <option value="1">Fevereiro</option> 
-                             <option value="2">Março</option> 
-                             <option value="3">Abril</option> 
-                             <option value="4">Maio</option> 
-                             <option value="5">Junho</option> 
-                             <option value="6">Julho</option> 
-                             <option value="7">Agosto</option> 
-                             <option value="8">Setembro</option> 
-                             <option value="9">Outubro</option> 
-                             <option value="10">Novembro</option> 
-                             <option value="11">Dezembro</option> 
-                         </select> 
-                         <button id="selectDateButton">Selecionar</button> 
-                     </div> 
-                 </div> 
-             </div> 
+    <div class="sidebar-menu"> 
+        <button class="close-menu" aria-label="Fechar Menu"> 
+            <i class="fas fa-times"></i> 
+        </button> 
+        <nav class="sidebar-nav"> 
+            <a href="index.html" class="sidebar-link">Home</a> 
+            <a href="#" class="sidebar-link">Envie uma pauta</a> 
+            <a href="noticias.html" class="sidebar-link">Notícias</a> 
+            <a href="#" class="sidebar-link">Nossa revista</a> 
+        </nav> 
+    </div> 
 
-             <div class="outras-noticias-grid" id="news-grid"> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 1"> 
-                     <p>Título da Notícia 1 - Data</p> 
-                 </div> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 2"> 
-                     <p>Título da Notícia 2 - Data</p> 
-                 </div> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 3"> 
-                     <p>Título da Notícia 3 - Data</p> 
-                 </div> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 4"> 
-                     <p>Título da Notícia 4 - Data</p> 
-                 </div> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 5"> 
-                     <p>Título da Notícia 5 - Data</p> 
-                 </div> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 6"> 
-                     <p>Título da Notícia 6 - Data</p> 
-                 </div> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 7"> 
-                     <p>Título da Notícia 7 - Data</p> 
-                 </div> 
-                 <div class="caixa-noticia"> 
-                     <img src="assets/imagem/image.png" alt="Imagem da Notícia 8"> 
-                     <p>Título da Notícia 8 - Data</p> 
-                 </div> 
-                 </div> 
-         </section> 
-     </main> 
+    <main class="noticias-content"> 
+        <section class="noticias-page-container animate-on-scroll"> 
+            <div class="noticias-header-page"> 
+                <h2>Todas as Notícias</h2> 
+                <button class="search-by-date-button" id="searchDateButton"> 
+                    Procurar por data <i class="fas fa-search"></i> 
+                </button> 
+                <div class="calendar-popup" id="calendarPopup"> 
+                    <div class="calendar-header"> 
+                        <button id="prevMonth">&lt;</button> 
+                        <span id="currentMonthYear"></span> 
+                        <button id="nextMonth">&gt;</button> 
+                    </div> 
+                    <div class="calendar-days-header"> 
+                        <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span> 
+                    </div> 
+                    <div class="calendar-grid" id="calendarGrid"></div> 
+                    <div class="calendar-footer"> 
+                        <select id="yearSelect"></select> 
+                        <select id="monthSelect"> 
+                            <option value="0">Janeiro</option> 
+                            <option value="1">Fevereiro</option> 
+                            <option value="2">Março</option> 
+                            <option value="3">Abril</option> 
+                            <option value="4">Maio</option> 
+                            <option value="5">Junho</option> 
+                            <option value="6">Julho</option> 
+                            <option value="7">Agosto</option> 
+                            <option value="8">Setembro</option> 
+                            <option value="9">Outubro</option> 
+                            <option value="10">Novembro</option> 
+                            <option value="11">Dezembro</option> 
+                        </select> 
+                        <button id="selectDateButton">Selecionar</button> 
+                    </div> 
+                </div> 
+            </div> 
 
-     <footer> 
-         <img src="assets/imagem/logo.png" alt="Logo Revista Aura" class="footer-logo"> 
-         <p class="footer-copyright">&copy; 2025 AURA. Inovação e Alma em Cada Matéria.</p> 
-         <div class="footer-social"> 
-             <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub da Revista Aura" class="social-button"> 
-                 <i class="fab fa-github"></i> 
-             </a> 
-             <a href="https://instagram.com/seu-instagram" target="_blank" aria-label="Instagram da Revista Aura" class="social-button"> 
-                 <i class="fab fa-instagram"></i> 
-             </a> 
-         </div> 
-     </footer> 
+            <div class="outras-noticias-grid" id="news-grid"> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 1"> 
+                    <p>Título da Notícia 1 - Data</p> 
+                </div> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 2"> 
+                    <p>Título da Notícia 2 - Data</p> 
+                </div> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 3"> 
+                    <p>Título da Notícia 3 - Data</p> 
+                </div> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 4"> 
+                    <p>Título da Notícia 4 - Data</p> 
+                </div> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 5"> 
+                    <p>Título da Notícia 5 - Data</p> 
+                </div> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 6"> 
+                    <p>Título da Notícia 6 - Data</p> 
+                </div> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 7"> 
+                    <p>Título da Notícia 7 - Data</p> 
+                </div> 
+                <div class="caixa-noticia"> 
+                    <img src="assets/imagem/image.png" alt="Imagem da Notícia 8"> 
+                    <p>Título da Notícia 8 - Data</p> 
+                </div> 
+            </div> 
+        </section> 
+    </main> 
 
-     <script src="assets/js/script.js"></script> 
-     <script> 
-         // Script específico para a página de notícias e calendário 
-         document.addEventListener('DOMContentLoaded', () => { 
-             // Reativa a animação de rolagem para esta página 
-             const sectionsToAnimate = document.querySelectorAll('.animate-on-scroll'); 
-             const observerOptions = { 
-                 root: null, 
-                 rootMargin: '0px', 
-                 threshold: 0.2 
-             }; 
-             const observer = new IntersectionObserver((entries, observer) => { 
-                 entries.forEach(entry => { 
-                     if (entry.isIntersecting) { 
-                         entry.target.classList.add('is-visible'); 
-                         observer.unobserve(entry.target); 
-                     } 
-                 }); 
-             }, observerOptions); 
-             sectionsToAnimate.forEach(section => { 
-                 observer.observe(section); 
-             }); 
+    <footer> 
+        <img src="assets/imagem/logo.png" alt="Logo Revista Aura" class="footer-logo"> 
+        <p class="footer-copyright">&copy; 2025 AURA. Inovação e Alma em Cada Matéria.</p> 
+        <div class="footer-social"> 
+            <a href="https://github.com/seu-usuario" target="_blank" aria-label="GitHub da Revista Aura" class="social-button"> 
+                <i class="fab fa-github"></i> 
+            </a> 
+            <a href="https://instagram.com/seu-instagram" target="_blank" aria-label="Instagram da Revista Aura" class="social-button"> 
+                <i class="fab fa-instagram"></i> 
+            </a> 
+        </div> 
+    </footer> 
 
-             // Lógica para o menu hambúrguer, se o script principal não for carregado 
-             const hamburgerButton = document.querySelector('.hamburger-menu'); 
-             const closeMenuButton = document.querySelector('.close-menu'); 
-             const sidebarMenu = document.querySelector('.sidebar-menu'); 
+    <div class="popup-overlay" id="popupPauta">
+        <div class="popup-content">
+            <button type="button" class="close-popup">&times;</button>
+            <h2>Envie sua pauta!</h2>
+            <form> 
+                <div class="form-group">
+                    <label for="nomePauta">Seu Nome:<span class="required-field">*</span></label>
+                    <input type="text" id="nomePauta" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="cursoPauta">Seu Curso:<span class="required-field">*</span></label>
+                    <input type="text" id="cursoPauta" placeholder="Seu curso" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailPauta">Seu E-mail:<span class="required-field">*</span></label>
+                    <input type="email" id="emailPauta" placeholder="Seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="assuntoPauta">Assunto:<span class="required-field">*</span></label>
+                    <input type="text" id="assuntoPauta" placeholder="Assunto da pauta" required>
+                </div>
+                <p class="optional-text">Se deseja compartilhar alguma informação ou mídia, anexe aqui:</p>
+                <div class="form-group file-upload-group"> 
+                    <label for="arquivoPauta" class="file-upload-label">Anexar arquivo</label>
+                    <input type="file" id="arquivoPauta" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                    <span id="file-name-display">Nenhum arquivo selecionado</span>
+                </div>
+                <button type="submit" class="submit-button">Enviar Pauta</button>
+            </form>
+        </div>
+    </div>
 
-             if (hamburgerButton && sidebarMenu && closeMenuButton) { 
-                 hamburgerButton.addEventListener('click', () => { 
-                     sidebarMenu.classList.add('active'); 
-                 }); 
-
-                 closeMenuButton.addEventListener('click', () => { 
-                     sidebarMenu.classList.remove('active'); 
-                 }); 
-
-                 const sidebarLinks = document.querySelectorAll('.sidebar-link'); 
-                 sidebarLinks.forEach(link => { 
-                     link.addEventListener('click', () => { 
-                         sidebarMenu.classList.remove('active'); 
-                     }); 
-                 }); 
-             } 
-
-             // Lógica do calendário 
-             const searchDateButton = document.getElementById('searchDateButton'); 
-             const calendarPopup = document.getElementById('calendarPopup'); 
-             const currentMonthYear = document.getElementById('currentMonthYear'); 
-             const calendarGrid = document.getElementById('calendarGrid'); 
-             const prevMonthButton = document.getElementById('prevMonth'); 
-             const nextMonthButton = document.getElementById('nextMonth'); 
-             const yearSelect = document.getElementById('yearSelect'); 
-             const monthSelect = document.getElementById('monthSelect'); 
-             const selectDateButton = document.getElementById('selectDateButton'); 
-
-             let currentViewDate = new Date(); // Mês e ano atualmente exibidos no calendário 
-
-             function toggleCalendar() { 
-                 calendarPopup.classList.toggle('active'); 
-             } 
-
-             function generateCalendar(year, month) { 
-                 calendarGrid.innerHTML = ''; // Limpa os dias anteriores 
-                 const firstDayOfMonth = new Date(year, month, 1); 
-                 const lastDayOfMonth = new Date(year, month + 1, 0); 
-                 const firstDayOfWeek = firstDayOfMonth.getDay(); // 0 = Domingo, 1 = Segunda... 
-
-                 currentMonthYear.textContent = `${firstDayOfMonth.toLocaleString('pt-br', { month: 'long' })} ${year}`; 
-                 yearSelect.value = year; 
-                 monthSelect.value = month; 
-
-                 // Preenche dias vazios no início do mês 
-                 for (let i = 0; i < firstDayOfWeek; i++) { 
-                     const emptyDay = document.createElement('div'); 
-                     emptyDay.classList.add('empty-day'); 
-                     calendarGrid.appendChild(emptyDay); 
-                 } 
-
-                 // Preenche os dias do mês 
-                 for (let day = 1; day <= lastDayOfMonth.getDate(); day++) { 
-                     const dayElement = document.createElement('div'); 
-                     dayElement.classList.add('calendar-day'); 
-                     dayElement.textContent = day; 
-                     dayElement.dataset.date = new Date(year, month, day).toISOString().split('T')[0]; 
-                     dayElement.addEventListener('click', () => { 
-                         // Remove 'selected' de todos os dias 
-                         document.querySelectorAll('.calendar-day.selected').forEach(d => d.classList.remove('selected')); 
-                         // Adiciona 'selected' ao dia clicado 
-                         dayElement.classList.add('selected'); 
-                     }); 
-                     calendarGrid.appendChild(dayElement); 
-                 } 
-             } 
-
-             function setupYearSelect() { 
-                 const currentYear = new Date().getFullYear(); 
-                 for (let i = currentYear - 10; i <= currentYear + 5; i++) { 
-                     const option = document.createElement('option'); 
-                     option.value = i; 
-                     option.textContent = i; 
-                     yearSelect.appendChild(option); 
-                 } 
-                 yearSelect.value = currentYear; 
-             } 
-
-             searchDateButton.addEventListener('click', toggleCalendar); 
-
-             prevMonthButton.addEventListener('click', () => { 
-                 currentViewDate.setMonth(currentViewDate.getMonth() - 1); 
-                 generateCalendar(currentViewDate.getFullYear(), currentViewDate.getMonth()); 
-             }); 
-
-             nextMonthButton.addEventListener('click', () => { 
-                 currentViewDate.setMonth(currentViewDate.getMonth() + 1); 
-                 generateCalendar(currentViewDate.getFullYear(), currentViewDate.getMonth()); 
-             }); 
-
-             yearSelect.addEventListener('change', (event) => { 
-                 currentViewDate.setFullYear(parseInt(event.target.value)); 
-                 generateCalendar(currentViewDate.getFullYear(), currentViewDate.getMonth()); 
-             }); 
-
-             monthSelect.addEventListener('change', (event) => { 
-                 currentViewDate.setMonth(parseInt(event.target.value)); 
-                 generateCalendar(currentViewDate.getFullYear(), currentViewDate.getMonth()); 
-             }); 
-
-             selectDateButton.addEventListener('click', () => { 
-                 const selectedDay = document.querySelector('.calendar-day.selected'); 
-                 if (selectedDay) { 
-                     const date = selectedDay.dataset.date; 
-                     alert(`Data selecionada: ${date}. Aqui você buscaria as notícias dessa data.`); 
-                     toggleCalendar(); // Fecha o calendário após a seleção 
-                 } else { 
-                     alert('Por favor, selecione um dia.'); 
-                 } 
-             }); 
-
-             setupYearSelect(); 
-             generateCalendar(currentViewDate.getFullYear(), currentViewDate.getMonth()); 
-
-             // Fechar o calendário ao clicar fora 
-             document.addEventListener('click', (event) => { 
-                 if (!calendarPopup.contains(event.target) && !searchDateButton.contains(event.target) && calendarPopup.classList.contains('active')) { 
-                     calendarPopup.classList.remove('active'); 
-                 } 
-             }); 
-         }); 
-     </script> 
- </body> 
- </html>
+    <script src="assets/js/global.js"></script> 
+    <script src="assets/js/noticias.js"></script>
+</body> 
+</html>
