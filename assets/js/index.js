@@ -172,11 +172,3 @@ window.addEventListener('load', () => {
     updateItemsPerView();
     updateCarouselPosition(false);
 });
-
-// Simulação de link para a página da notícia
-const caixasNoticia = document.querySelectorAll('.caixa-noticia:not(.clone)');
-caixasNoticia.forEach(caixa => {
-    caixa.addEventListener('click', () => {
-        alert('Você clicou em uma notícia!');
-    });
-});

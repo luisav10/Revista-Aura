@@ -391,3 +391,15 @@ body.noticias-page .caixa-noticia img {
     background-color: #cc0066;
     transform: translateY(-2px);
 }
+/* Adicione ou altere o código abaixo no seu arquivo noticias.css */
+
+.noticias .caixa-noticia {
+    /* Esta linha é a principal para o conserto */
+    display: block; 
+    
+    /* As linhas abaixo são para garantir que não haja outros problemas */
+    width: 100%;
+    height: auto;
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Mantém a cor do texto padrão */
+}
