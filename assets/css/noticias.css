@@ -425,3 +425,18 @@ body.noticias-page .sidebar-link,
 body.noticias-page .hamburger-menu i {
     color: #fff;
 }
+/* Efeito de transição para as caixas de notícia */
+.caixa-noticia {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado de hover */
+.caixa-noticia:hover {
+    transform: scale(1.03); /* Aumenta o tamanho em 3% */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Adiciona uma sombra */
+}
+
+/* Opcional: Adiciona um efeito no texto */
+.caixa-noticia:hover p {
+    color: var(--cor-principal); /* Exemplo: muda a cor do texto no hover */
+}

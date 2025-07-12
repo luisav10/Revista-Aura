@@ -105,3 +105,25 @@ footer {
         width: 60%; /* Define a largura do texto para ocupar 60% do container */
     }
 }
+/* Estilos para o efeito de "subida" na abertura da página */
+.article-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.article-content.scroll-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Efeito de "subida" para o rodapé */
+footer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
