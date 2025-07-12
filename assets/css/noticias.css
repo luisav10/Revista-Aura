@@ -167,9 +167,7 @@
 body.noticias-page .noticias-page-header {
     background-color: transparent;
     color: black;
-    padding: 20px 5vw;
     display: flex;
-    /* Removido o justify-content: space-between */
     align-items: center;
     width: 100%;
     height: auto;
@@ -182,7 +180,6 @@ body.noticias-page .noticias-page-header {
 
 body.noticias-page .noticias-page-header nav {
     margin-right: auto;
-    /* Empurra o menu para a esquerda, forçando-o a ocupar o espaço restante */
 }
 
 body.noticias-page .noticias-page-header img {
@@ -391,15 +388,40 @@ body.noticias-page .caixa-noticia img {
     background-color: #cc0066;
     transform: translateY(-2px);
 }
-/* Adicione ou altere o código abaixo no seu arquivo noticias.css */
 
+/* Adicione ou altere o código abaixo no seu arquivo noticias.css */
 .noticias .caixa-noticia {
-    /* Esta linha é a principal para o conserto */
-    display: block; 
-    
-    /* As linhas abaixo são para garantir que não haja outros problemas */
+    display: block;
     width: 100%;
     height: auto;
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: inherit; /* Mantém a cor do texto padrão */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilos para o cabeçalho e rodapé */
+.noticias-page-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.158), rgba(134, 134, 134, 0.123)), url('../imagem/cabeçalho.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 40px 20px;
+}
+
+/* Links do menu em geral (padrão preto) */
+.header-link,
+.sidebar-link,
+.hamburger-menu i {
+    color: #1a1a1a;
+}
+
+/* Regra específica para tornar os links e ícones do menu brancos na página noticias.html */
+body.noticias-page .header-link,
+body.noticias-page .sidebar-link,
+body.noticias-page .hamburger-menu i {
+    color: #fff;
 }

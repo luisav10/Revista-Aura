@@ -45,8 +45,28 @@
 
 /* Adiciona espaçamento para o conteúdo e a cor de fundo da página */
 body.article-page {
-    padding-top: 50px;
+    padding-top: 100px;
     background-color: #fff; /* Fundo da página agora é branco */
+}
+
+/* --- Estilos para o cabeçalho e rodapé --- */
+.noticias-page-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.158), rgba(134, 134, 134, 0.123)), url('../imagem/cabeçalho.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 40px 20px;
+}
+
+/* Estilos para links do menu */
+.header-link,
+.sidebar-link {
+    color: #fff;
 }
 
 /* Pequeno ajuste para telas menores */
@@ -61,10 +81,13 @@ body.article-page {
         font-size: 1rem;
     }
 }
+
 /* Estilos para telas maiores (PC) */
 @media (min-width: 769px) {
     .article-content .container {
         padding: 30px; /* Aumenta um pouco o padding geral no PC */
+        margin-top: 80px; /* Aumento da margem superior */
+        margin-bottom: 60px; /* A margem inferior foi mantida */
     }
 
     .article-body {
@@ -81,5 +104,4 @@ body.article-page {
     #article-text {
         width: 60%; /* Define a largura do texto para ocupar 60% do container */
     }
-    
 }
