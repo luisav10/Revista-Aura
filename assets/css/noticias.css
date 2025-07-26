@@ -138,7 +138,7 @@
     border: none;
 }
 
-/* Alterações no botão "Descubra mais" apenas na seção "Outras Notícias" */
+/* Alterações no botão "Descobrir mais" apenas na seção "Outras Notícias" */
 .noticias-linha.outras-noticias .botao-principal {
     background-color: white;
     color: #1a1a1a;
@@ -188,10 +188,10 @@ body.noticias-page .noticias-page-header img {
 
 body.noticias-page .noticias-content {
     padding-top: 80px;
-    min-height: calc(100vh - 120px);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    /* REMOVIDO: min-height: calc(100vh - 120px); */
+    /* REMOVIDO: display: flex; */
+    /* REMOVIDO: justify-content: center; */
+    /* REMOVIDO: align-items: flex-start; */
     box-sizing: border-box;
 }
 
@@ -407,11 +407,6 @@ body.noticias-page .caixa-noticia img {
     padding: 40px 20px;
 }
 
-footer {
-    background-color: #1a1a1a;
-    padding: 40px 20px;
-}
-
 /* Links do menu em geral (padrão preto) */
 .header-link,
 .sidebar-link,
@@ -434,9 +429,4 @@ body.noticias-page .hamburger-menu i {
 .caixa-noticia:hover {
     transform: scale(1.03); /* Aumenta o tamanho em 3% */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Adiciona uma sombra */
-}
-
-/* Opcional: Adiciona um efeito no texto */
-.caixa-noticia:hover p {
-    color: var(--cor-principal); /* Exemplo: muda a cor do texto no hover */
 }

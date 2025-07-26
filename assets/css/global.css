@@ -6,6 +6,12 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+
+    /* INÍCIO DAS ALTERAÇÕES PARA RODAPÉ FIXO */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    /* FIM DAS ALTERAÇÕES */
 }
 
 /* Novo estilo para a tela inicial - Animação de carregamento */
@@ -45,12 +51,6 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
-    
-}
-
-header img {
-    display: none;
-    height: 60px;
 }
 
 /* Estilos para os novos links do cabeçalho */
@@ -215,6 +215,8 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 0;
+    /* Adicionado para garantir que o footer não encolha */
+    flex-shrink: 0;
 }
 
 .footer-logo {
@@ -361,10 +363,11 @@ body.noticias-page header {
     padding-right: 5vw;
 }
 
-body.noticias-page header img {
-    display: none;
-}
-
 body.noticias-page .header-nav {
     margin-left: 0;
+}
+
+/* NOVO ESTILO PARA O CONTEÚDO PRINCIPAL CRESCER E EMPURRAR O RODAPÉ */
+main {
+    flex-grow: 1; /* Faz o conteúdo principal ocupar o espaço restante */
 }
