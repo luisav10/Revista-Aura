@@ -10,7 +10,7 @@ body {
     /* INÍCIO DAS ALTERAÇÕES PARA RODAPÉ FIXO */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    min-height: 100vh;
     /* FIM DAS ALTERAÇÕES */
 }
 
@@ -30,11 +30,16 @@ body {
     align-items: flex-start;
     opacity: 0;
     animation: fadeInPage 1.5s ease-out forwards;
+    flex-grow: 1;
 }
 
 @keyframes fadeInPage {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 header {
@@ -122,7 +127,8 @@ header {
     vertical-align: top;
 }
 
-#span-au, #span-ra {
+#span-au,
+#span-ra {
     color: #FF0088;
     font-weight: bold;
 }
@@ -147,9 +153,9 @@ header {
     margin-left: 0;
     margin-right: 0;
     transition: opacity 1s ease-in-out,
-                max-width 0.8s ease-in-out 0.2s,
-                padding 0.8s ease-in-out 0.2s,
-                margin 0.8s ease-in-out 0.2s;
+        max-width 0.8s ease-in-out 0.2s,
+        padding 0.8s ease-in-out 0.2s,
+        margin 0.8s ease-in-out 0.2s;
 }
 
 .titulo-animado.animar-aura #span-au {
@@ -171,9 +177,9 @@ header {
     margin-left: 0;
     margin-right: 0;
     transition: opacity 1s ease-in-out 0.2s,
-                max-width 1s ease-in-out,
-                padding 1s ease-in-out,
-                1s ease-in-out;
+        max-width 1s ease-in-out,
+        padding 1s ease-in-out,
+        1s ease-in-out;
 }
 
 .titulo-animado.animar-aura #span-l {
@@ -217,6 +223,7 @@ footer {
     margin-top: 0;
     /* Adicionado para garantir que o footer não encolha */
     flex-shrink: 0;
+    margin-top: auto;
 }
 
 .footer-logo {
@@ -369,5 +376,5 @@ body.noticias-page .header-nav {
 
 /* NOVO ESTILO PARA O CONTEÚDO PRINCIPAL CRESCER E EMPURRAR O RODAPÉ */
 main {
-    flex-grow: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+    flex-grow: 1;
 }

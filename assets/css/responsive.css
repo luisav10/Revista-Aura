@@ -38,7 +38,6 @@
         margin-left: 0;
         justify-content: center;
     }
-    /* MANTIDO: .carousel-dots { display: none; } - Mesmo não estando no HTML, pode ser adicionado via JS e essa regra é importante para responsividade. */
     .noticias-header-page {
         flex-direction: column;
         align-items: flex-start;
@@ -61,12 +60,10 @@
 
 @media (max-width: 768px) {
     .initial-screen {
-        min-height: 75vh;
-        max-height: 75vh;
-        height: 75vh;
+        /* Removido min-height, max-height e height */
         justify-content: center;
         /* ALTERAÇÃO: Posicionamento da imagem de fundo */
-        background-position: left;
+        background-position: 40%;
     }
     header {
         height: auto;
@@ -149,7 +146,6 @@
         max-width: 100%;
         min-width: unset;
     }
-    /* Removido: .botao-descobrir-mais { padding: 12px 25px; font-size: 1em; } pois a classe .botao-descobrir-mais não existe nos HTMLs ou nos outros CSS. O .botao-principal é usado para essa finalidade. */
     .carousel-dots {
         display: flex;
     }
@@ -207,7 +203,6 @@
         height: 40px;
     }
     .header-link {
-        /* MANTIDO - Mesmo que o header-nav esteja display:none, o header-link pode ser reusado na sidebar-menu */
         font-size: 0.8em;
     }
     .titulo-animado h1 {
