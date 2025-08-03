@@ -201,6 +201,14 @@
         text-align: center;
         margin-top: 20px;
     }
+
+    /* Alterações para o visualizador de PDF */
+    .noticias-header-page {
+        padding: 20px;
+    }
+    .pdf-container {
+        height: 80vh;
+    }
 }
 
 @media (max-width: 480px) {
@@ -251,11 +259,11 @@
     .titulo-animado .botoes-titulo {
         display: none;
     }
-    
+
     .initial-screen .botoes-titulo-mobile {
         display: block;
     }
-    
+
     .botao-principal-mobile {
         width: 100%;
         text-align: center;
