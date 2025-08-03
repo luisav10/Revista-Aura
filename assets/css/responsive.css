@@ -65,6 +65,8 @@
         max-height: 75vh;
         height: 75vh;
         justify-content: center;
+        /* ALTERAÇÃO: Posicionamento da imagem de fundo */
+        background-position: left;
     }
     header {
         height: auto;
@@ -78,7 +80,8 @@
     header .hamburger-menu {
         display: block;
     }
-    header img { /* Este estilo se aplica ao logo da revista que aparece no cabeçalho em mobile */
+    header img {
+        /* Este estilo se aplica ao logo da revista que aparece no cabeçalho em mobile */
         display: block;
         height: 45px;
         position: absolute;
@@ -115,7 +118,8 @@
     .carousel-container {
         padding: 0;
     }
-    .noticias { /* MANTIDO - Pode ser um container geral para notícias, mesmo se o HTML não tiver um diretamente, pode ser adicionado via JS ou ser uma classe em body. */
+    .noticias {
+        /* MANTIDO - Pode ser um container geral para notícias, mesmo se o HTML não tiver um diretamente, pode ser adicionado via JS ou ser uma classe em body. */
         padding: 20px 5vw 0 5vw;
         margin-top: 50px;
     }
@@ -162,6 +166,39 @@
     .noticias-page-container h2 {
         font-size: 1.8em;
     }
+    /* ALTERAÇÃO: Rodapé menor na altura */
+    footer {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .footer-logo {
+        height: 50px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .footer-copyright {
+        font-size: 0.8em;
+        margin-bottom: 0;
+        order: 2;
+    }
+    .footer-social {
+        margin-left: 0;
+        gap: 10px;
+    }
+    .social-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -169,7 +206,8 @@
         display: block;
         height: 40px;
     }
-    .header-link { /* MANTIDO - Mesmo que o header-nav esteja display:none, o header-link pode ser reusado na sidebar-menu */
+    .header-link {
+        /* MANTIDO - Mesmo que o header-nav esteja display:none, o header-link pode ser reusado na sidebar-menu */
         font-size: 0.8em;
     }
     .titulo-animado h1 {

@@ -54,46 +54,51 @@
         </nav>
     </div>
 
-    <footer> <img src="assets/imagem/logo.png" alt="Logo Revista Aura" class="footer-logo">
-        <p class="footer-copyright">&copy; 2025 AURA. Inovação e Alma em Cada Linha de Matéria.</p>
-        <div class="footer-social">
-            <a href="https://github.com/equipeaura" target="_blank" aria-label="GitHub da Revista Aura" class="social-button">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://instagram.com/auraequipe" target="_blank" aria-label="Instagram da Revista Aura" class="social-button">
-                <i class="fab fa-instagram"></i>
-            </a>
+    <footer>
+        <div class="footer-content-top">
+            <img src="assets/imagem/logo.png" alt="Logo Revista Aura" class="footer-logo">
+            <div class="footer-social">
+                <a href="https://github.com/equipeaura" target="_blank" aria-label="GitHub da Revista Aura" class="social-button">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://instagram.com/auraequipe" target="_blank" aria-label="Instagram da Revista Aura" class="social-button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
         </div>
+        <p class="footer-copyright">&copy; 2025 AURA. Inovação e Alma em Cada Linha de Matéria.</p>
     </footer>
     <div class="popup-overlay" id="popupPauta">
-    <div class="popup-content">
-        <button type="button" class="close-popup">&times;</button>
-        <h2>Envie sua pauta!</h2>
-        <form> <div class="form-group">
-                <label for="nomePauta">Seu Nome:<span class="required-field">*</span></label>
-                <input type="text" id="nomePauta" placeholder="Seu nome" required>
-            </div>
-            <div class="form-group">
-                <label for="cursoPauta">Seu Curso:<span class="required-field">*</span></label>
-                <input type="text" id="cursoPauta" placeholder="Seu curso" required>
-            </div>
-            <div class="form-group">
-                <label for="emailPauta">Seu E-mail:<span class="required-field">*</span></label>
-                <input type="email" id="emailPauta" placeholder="Seu e-mail" required>
-            </div>
-            <div class="form-group">
-                <label for="assuntoPauta">Assunto:<span class="required-field">*</span></label>
-                <input type="text" id="assuntoPauta" placeholder="Assunto da pauta" required>
-            </div>
-            <p class="optional-text">Se deseja compartilhar alguma informação ou mídia, anexe aqui:</p>
-            <div class="form-group file-upload-group"> <label for="arquivoPauta" class="file-upload-label">Anexar arquivo</label>
-                <input type="file" id="arquivoPauta" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
-                <span id="file-name-display">Nenhum arquivo selecionado</span>
-            </div>
-            <button type="submit" class="submit-button">Enviar Pauta</button>
-        </form>
+        <div class="popup-content">
+            <button type="button" class="close-popup">&times;</button>
+            <h2>Envie sua pauta!</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nomePauta">Seu Nome:<span class="required-field">*</span></label>
+                    <input type="text" id="nomePauta" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="cursoPauta">Seu Curso:<span class="required-field">*</span></label>
+                    <input type="text" id="cursoPauta" placeholder="Seu curso" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailPauta">Seu E-mail:<span class="required-field">*</span></label>
+                    <input type="email" id="emailPauta" placeholder="Seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="assuntoPauta">Assunto:<span class="required-field">*</span></label>
+                    <input type="text" id="assuntoPauta" placeholder="Assunto da pauta" required>
+                </div>
+                <p class="optional-text">Se deseja compartilhar alguma informação ou mídia, anexe aqui:</p>
+                <div class="form-group file-upload-group">
+                    <label for="arquivoPauta" class="file-upload-label">Anexar arquivo</label>
+                    <input type="file" id="arquivoPauta" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                    <span id="file-name-display">Nenhum arquivo selecionado</span>
+                </div>
+                <button type="submit" class="submit-button">Enviar Pauta</button>
+            </form>
+        </div>
     </div>
-</div>
 
     <script src="assets/js/global.js"></script>
     <script src="assets/js/index.js"></script>
