@@ -92,3 +92,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Seletor para o botão que abre o pop-up no header
+    const openPautaButton = document.getElementById('openPautaButton');
+    // Seletor para o botão que abre o pop-up na sidebar
+    const sidebarPautaLink = document.querySelector('.sidebar-menu a[href="#"]');
+    const popupOverlay = document.getElementById('popupPauta');
+    const closePopupButtons = document.querySelectorAll('.close-popup');
+    const sidebarMenu = document.querySelector('.sidebar-menu');
+
+    // Função para abrir o pop-up
+    const openPopup = (event) => {
+        event.preventDefault();
+        popupOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Evita rolagem do body quando o pop-up está aberto
+        // Fecha o menu lateral se estiver aberto
+        sidebarMenu.classList.remove('active');
+    };
+
+    // Adiciona o evento de clique ao botão do header
+    if (openPautaButton) {
+        openPautaButton.addEventListener('click', openPopup);
+    }
+
+    // Adiciona o evento de clique ao link da sidebar
+    if (sidebarPautaLink) {
+        sidebarPautaLink.addEventListener('click', openPopup);
+    }
+
+    // Adiciona evento de clique para fechar o pop-up
+    closePopupButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Restaura a rolagem do body
+        });
+    });
+
+    // Fecha o pop-up ao clicar fora dele
+    popupOverlay.addEventListener('click', (event) => {
+        if (event.target === popupOverlay) {
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // --- CÓDIGO EXISTENTE PARA ABRIR E FECHAR O MENU HAMBÚRGUER ---
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const closeMenuButton = document.querySelector('.close-menu');
+
+    hamburgerMenu.addEventListener('click', () => {
+        sidebarMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+        sidebarMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});

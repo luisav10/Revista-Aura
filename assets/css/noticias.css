@@ -452,3 +452,71 @@ body.noticias-page .hamburger-menu i {
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Opcional: para dar um leve efeito de profundidade */
 }
+/* --- Estilos para o visualizador de PDF --- */
+.noticias-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.pdf-reader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.pdf-viewer-pages {
+    width: 100%;
+    max-height: 80vh; /* Limita a altura para que a barra de navegação apareça */
+    overflow-y: auto; /* Adiciona rolagem interna para o conteúdo do PDF */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-viewer-pages canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.pdf-navigation-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.pdf-nav-button {
+    background: none;
+    border: none;
+    color: #FF0088;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.pdf-nav-button:hover {
+    color: #cc0066;
+}
+
+.pdf-page-info {
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+}

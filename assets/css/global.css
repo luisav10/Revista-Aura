@@ -204,6 +204,26 @@ header {
     transform: translateY(-2px);
 }
 
+.botoes-titulo-mobile {
+    display: none;
+}
+
+.botao-principal-mobile {
+    background-color: #FF0088;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+}
+
 /* --- ESTILOS DO RODAPÉ (APENAS PARA VERSÃO PC) --- */
 footer {
     background-color: #1a1a1a;

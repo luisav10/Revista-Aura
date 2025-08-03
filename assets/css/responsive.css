@@ -192,6 +192,15 @@
     body .sidebar-menu .sidebar-link {
         color: #1a1a1a;
     }
+    .initial-screen .botoes-titulo-mobile {
+        display: block;
+    }
+
+    .botao-principal-mobile {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -234,3 +243,26 @@
         font-size: 1em;
     }
 }
+/* ... (código anterior) ... */
+
+@media (max-width: 768px) {
+    /* ... (código existente) ... */
+
+    .titulo-animado .botoes-titulo {
+        display: none;
+    }
+    
+    .initial-screen .botoes-titulo-mobile {
+        display: block;
+    }
+    
+    .botao-principal-mobile {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* ... (código posterior) ... */
+}
+
+/* ... (código posterior) ... */
