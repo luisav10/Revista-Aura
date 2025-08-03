@@ -6,15 +6,11 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-
-    /* INÍCIO DAS ALTERAÇÕES PARA RODAPÉ FIXO */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* FIM DAS ALTERAÇÕES */
 }
 
-/* Novo estilo para a tela inicial - Animação de carregamento */
 .initial-screen {
     display: flex;
     flex-direction: column;
@@ -58,7 +54,6 @@ header {
     z-index: 10;
 }
 
-/* Estilos para os novos links do cabeçalho */
 .header-nav {
     display: flex;
     gap: 20px;
@@ -107,7 +102,6 @@ header {
     margin-bottom: 20px;
 }
 
-/* NOVO ESTILO PARA O PARÁGRAFO */
 .titulo-animado p {
     font-size: 1.1em;
     color: #333;
@@ -186,7 +180,6 @@ header {
     margin-right: 0;
 }
 
-/* Estilos para os novos botões abaixo do título */
 .botoes-titulo {
     display: flex;
     gap: 15px;
@@ -211,7 +204,7 @@ header {
     transform: translateY(-2px);
 }
 
-/* --- ESTILOS DO NOVO FOOTER --- */
+/* --- ESTILOS DO RODAPÉ (APENAS PARA VERSÃO PC) --- */
 footer {
     background-color: #1a1a1a;
     color: white;
@@ -220,28 +213,21 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 0;
-    /* Adicionado para garantir que o footer não encolha */
-    flex-shrink: 0;
     margin-top: auto;
 }
 
 .footer-logo {
     height: 60px;
-    margin-right: 20px;
 }
 
 .footer-copyright {
     font-size: 0.9em;
     text-align: center;
-    flex-grow: 1;
-    padding: 0 20px;
 }
 
 .footer-social {
     display: flex;
     gap: 15px;
-    margin-left: 20px;
 }
 
 .social-button {
@@ -262,6 +248,8 @@ footer {
     background-color: #cc0066;
     transform: translateY(-2px);
 }
+/* --- FIM DOS ESTILOS DO RODAPÉ --- */
+
 
 /* --- Regras para Animações de Rolagem (Fade-in Slide-up) --- */
 .animate-on-scroll {
@@ -338,7 +326,6 @@ footer {
     color: #FF0088;
 }
 
-/* Estilos para os botões no cabeçalho mobile */
 .header-buttons-mobile {
     display: none;
     gap: 10px;
@@ -356,15 +343,14 @@ footer {
     font-size: 0.8em;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     white-space: nowrap;
+    transition: background-color 0.3s ease;
 }
 
 .botao-principal-header:hover {
     background-color: #cc0066;
 }
 
-/* CORREÇÕES FINAIS E MAIS ESPECÍFICAS PARA A PÁGINA DE NOTÍCIAS */
 body.noticias-page header {
     padding-left: 5vw;
     padding-right: 5vw;
@@ -374,7 +360,6 @@ body.noticias-page .header-nav {
     margin-left: 0;
 }
 
-/* NOVO ESTILO PARA O CONTEÚDO PRINCIPAL CRESCER E EMPURRAR O RODAPÉ */
 main {
     flex-grow: 1;
 }
