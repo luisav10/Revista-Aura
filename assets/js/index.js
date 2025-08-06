@@ -172,3 +172,53 @@ window.addEventListener('load', () => {
     updateItemsPerView();
     updateCarouselPosition(false);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const pautaForm = document.getElementById('pautaForm');
+    const pautaFormWrapper = document.getElementById('pauta-form-wrapper');
+    const pautaSuccessWrapper = document.getElementById('pauta-success-wrapper');
+    const openPautaButton = document.getElementById('openPautaButton');
+    const closePopupButton = document.querySelector('.close-popup');
+    const popupOverlay = document.getElementById('popupPauta');
+
+    openPautaButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        popupOverlay.style.display = 'flex';
+        pautaFormWrapper.style.display = 'block'; // Mostra o formulário
+        pautaSuccessWrapper.style.display = 'none'; // Esconde a mensagem de sucesso
+    });
+
+    closePopupButton.addEventListener('click', function() {
+        popupOverlay.style.display = 'none';
+        pautaForm.reset(); // Limpa o formulário quando o pop-up é fechado
+    });
+
+    pautaForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Envia o formulário usando fetch para evitar recarregar a página
+        fetch(pautaForm.action, {
+            method: 'POST',
+            body: new FormData(pautaForm),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Se o envio for bem-sucedido:
+                // 1. Esconde o formulário
+                pautaFormWrapper.style.display = 'none';
+                // 2. Mostra a mensagem de sucesso
+                pautaSuccessWrapper.style.display = 'block';
+                // 3. Reseta o formulário para limpar os campos
+                pautaForm.reset();
+            } else {
+                // Se houver erro, pode exibir uma mensagem de erro
+                alert('Ocorreu um erro ao enviar a pauta. Por favor, tente novamente.');
+            }
+        })
+        .catch(error => {
+            alert('Ocorreu um erro ao enviar a pauta. Por favor, tente novamente.');
+        });
+    });
+});

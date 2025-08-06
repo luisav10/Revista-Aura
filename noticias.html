@@ -42,11 +42,14 @@
         <section class="noticias-page-container animate-on-scroll">
             <div class="noticias-header-page">
                 <div class="pdf-container">
-                    <embed
+                    <iframe
                         src="assets/documentos/Revista-aura.pdf"
-                        type="application/pdf"
+                        title="Revista Aura - Edição Atual"
                         width="100%"
-                        height="100%" />
+                        height="100%"
+                        style="border: none;">
+                        <p>Seu navegador não suporta a visualização de PDFs. <a href="assets/documentos/Revista-aura.pdf">Clique aqui para fazer o download.</a></p>
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -68,32 +71,38 @@
     <div class="popup-overlay" id="popupPauta">
         <div class="popup-content">
             <button type="button" class="close-popup">&times;</button>
-            <h2>Envie sua pauta!</h2>
-            <form>
-                <div class="form-group">
-                    <label for="nomePauta">Seu Nome:<span class="required-field">*</span></label>
-                    <input type="text" id="nomePauta" placeholder="Seu nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="cursoPauta">Seu Curso:<span class="required-field">*</span></label>
-                    <input type="text" id="cursoPauta" placeholder="Seu curso" required>
-                </div>
-                <div class="form-group">
-                    <label for="emailPauta">Seu E-mail:<span class="required-field">*</span></label>
-                    <input type="email" id="emailPauta" placeholder="Seu e-mail" required>
-                </div>
-                <div class="form-group">
-                    <label for="assuntoPauta">Assunto:<span class="required-field">*</span></label>
-                    <input type="text" id="assuntoPauta" placeholder="Assunto da pauta" required>
-                </div>
-                <p class="optional-text">Se deseja compartilhar alguma informação ou mídia, anexe aqui:</p>
-                <div class="form-group file-upload-group">
-                    <label for="arquivoPauta" class="file-upload-label">Anexar arquivo</label>
-                    <input type="file" id="arquivoPauta" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
-                    <span id="file-name-display">Nenhum arquivo selecionado</span>
-                </div>
-                <button type="submit" class="submit-button">Enviar Pauta</button>
-            </form>
+            <div id="pauta-form-wrapper">
+                <h2>Envie sua pauta!</h2>
+                <form id="pautaForm" action="https://formspree.io/f/xeokwqaq" method="POST">
+                    <div class="form-group">
+                        <label for="nomePauta">Seu Nome:<span class="required-field">*</span></label>
+                        <input type="text" id="nomePauta" name="nomePauta" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cursoPauta">Seu Curso:<span class="required-field">*</span></label>
+                        <input type="text" id="cursoPauta" name="cursoPauta" placeholder="Seu curso" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailPauta">Seu E-mail:<span class="required-field">*</span></label>
+                        <input type="email" id="emailPauta" name="_replyto" placeholder="Seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="assuntoPauta">Assunto:<span class="required-field">*</span></label>
+                        <input type="text" id="assuntoPauta" name="assuntoPauta" placeholder="Assunto da pauta" required>
+                    </div>
+                    <p class="optional-text">Se deseja compartilhar alguma informação ou mídia, anexe aqui:</p>
+                    <div class="form-group file-upload-group">
+                        <label for="arquivoPauta" class="file-upload-label">Anexar arquivo</label>
+                        <input type="file" id="arquivoPauta" name="anexo" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                        <span id="file-name-display">Nenhum arquivo selecionado</span>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Pauta</button>
+                </form>
+            </div>
+            <div id="pauta-success-wrapper" style="display: none;">
+                <h2>Pauta enviada com sucesso!</h2>
+                <p>Agradecemos sua contribuição. Em breve, nossa equipe entrará em contato.</p>
+            </div>
         </div>
     </div>
 
