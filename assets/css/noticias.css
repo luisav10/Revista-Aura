@@ -520,3 +520,20 @@ body.noticias-page .hamburger-menu i {
     color: #555;
     font-weight: bold;
 }
+.pdf-container {
+    position: relative;
+    width: 100%;
+    /* Define uma altura fixa ou responsiva para o container do PDF */
+    height: 80vh; 
+    /* Esta propriedade é crucial para o scroll em dispositivos iOS */
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
+.pdf-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
