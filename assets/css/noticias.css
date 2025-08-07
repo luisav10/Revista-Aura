@@ -523,11 +523,8 @@ body.noticias-page .hamburger-menu i {
 .pdf-container {
     position: relative;
     width: 100%;
-    /* Define uma altura fixa ou responsiva para o container do PDF */
+    /* Altura para a visualização na tela. Você pode ajustar esse valor. */
     height: 80vh; 
-    /* Esta propriedade é crucial para o scroll em dispositivos iOS */
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
 }
 
 .pdf-container iframe {
