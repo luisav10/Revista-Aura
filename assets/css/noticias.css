@@ -520,17 +520,16 @@ body.noticias-page .hamburger-menu i {
     color: #555;
     font-weight: bold;
 }
+/* Altura padrão para telas pequenas (mobile) */
 .pdf-container {
     position: relative;
     width: 100%;
-    /* Altura para a visualização na tela. Você pode ajustar esse valor. */
-    height: 80vh; 
+    height: 80vh; /* 80% da altura da tela, perfeito para mobile */
 }
 
-.pdf-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* Altura maior para telas médias e grandes (tablets e desktops) */
+@media (min-width: 768px) {
+    .pdf-container {
+        height: 95vh; /* Aumenta a altura para 120% da altura da tela */
+    }
 }
